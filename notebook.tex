@@ -1,0 +1,31 @@
+\documentclass[11pt,twoside,a4paper]{book}
+\usepackage{color}
+\usepackage{fontspec}
+    \setmainfont{Arial}
+\usepackage{xltxtra}
+
+\usepackage{titlesec}
+\usepackage{titling}
+% font declaration and title settings
+\newfontfamily\headingfont[]{Michroma}
+\titleformat{\chapter}[display]
+  {\huge\headingfont}{\chaptertitlename\ \thechapter}{20pt}{\Huge}
+\titleformat*{\section}{\LARGE\headingfont}
+\titleformat*{\subsection}{\Large\headingfont}
+\renewcommand{\maketitlehooka}{\headingfont}
+
+\title{The Bear's Engineering Notes}
+\author{Derry Hamilton}
+
+
+\begin{document}
+\frontmatter
+\maketitle
+\input{chapters/intro}
+
+\mainmatter
+\input{chapters/iso_limits_and_fits}
+\input{chapters/threads}
+
+\end{document}
+
