@@ -3,30 +3,53 @@
 \usepackage{fontspec}
     \setmainfont{Arial}
 \usepackage{xltxtra}
+\usepackage{wasysym}
+\usepackage{gensymb}
+\usepackage{adjustbox}
 
 \usepackage{titlesec}
-\usepackage{titling}
-% font declaration and title settings
-\newfontfamily\headingfont[]{Michroma}
-\titleformat{\chapter}[display]
-  {\huge\headingfont}{\chaptertitlename\ \thechapter}{20pt}{\Huge}
-\titleformat*{\section}{\LARGE\headingfont}
+    \newfontfamily\headingfont[]{Michroma}
+
+    \titlespacing{\chapter}{0pt}{0pt}{0pt}[0pt]
+    \titleformat
+        {\chapter} % command
+        [block] %shape
+        {\huge\headingfont} %format
+        {\thechapter:} %label
+        {1em} %seperator
+        {} % before code
+
+    \titleformat
+        {\section} %command
+        [runin] %shape
+        {\LARGE\headingfont} %format
+        {\thesection} %lablel
+        {1em} %seperator
+        {} % before code
+
 \titleformat*{\subsection}{\Large\headingfont}
-\renewcommand{\maketitlehooka}{\headingfont}
+
+
+\usepackage{wrapfig}
+\usepackage{graphicx}
+\usepackage[colorlinks=true, linktocpage=true]{hyperref}
 
 \title{The Bear's Engineering Notes}
 \author{Derry Hamilton}
 
+\newcommand{\specialcell}[2][c]{%
+      \begin{tabular}[#1]{@{}c@{}}#2\end{tabular}}
 
 \begin{document}
 \frontmatter
 \maketitle
+\tableofcontents
 \input{chapters/intro}
 
 \mainmatter
-\input{chapters/iso_limits_and_fits}
-\input{chapters/threads}
-\input{chapters/collets}
+\include{chapters/iso_limits_and_fits}
+\include{chapters/threads}
+\include{chapters/collets}
 
 \end{document}
 

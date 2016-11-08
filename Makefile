@@ -3,8 +3,15 @@ CHAPTERS=$(wildcard chapters/*.tex)
 
 all: book
 
+remake:
+	xelatex -halt-on-error notebook.tex
+	xelatex -halt-on-error notebook.tex
+	cp -v *.pdf ${HOME}/public_html/
+
+fullclean: clean
+	rm -f *.aux *.toc chapters/*.aux
 clean:
-	rm -f *.aux  *.log  *.pdf
+	rm -f ${TARGET} *.log
 
 book: ${TARGET}
 
@@ -14,7 +21,8 @@ notebook.tex: ${CHAPTERS}
 	touch notebook.tex
 
 %.pdf: %.tex
-	xelatex $<
+	xelatex -halt-on-error $<
+	xelatex -halt-on-error $<
 	cp -v $@ ${HOME}/public_html/
 
 
