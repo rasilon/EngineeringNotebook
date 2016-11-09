@@ -15,7 +15,7 @@ clean:
 
 book: ${TARGET}
 
-${TARGET}: notebook.tex
+${TARGET}: notebook.tex notebook.xmpdata
 
 notebook.tex: ${CHAPTERS}
 	touch notebook.tex
