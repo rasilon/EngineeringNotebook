@@ -32,9 +32,19 @@
 
 \usepackage{wrapfig}
 \usepackage{graphicx}
+\usepackage{graphics}
 \usepackage[colorlinks=true, linktocpage=true]{hyperref}
 \usepackage{hyperxmp}
 \usepackage{longtable}
+\usepackage[clockwise, figuresleft]{rotating}
+
+
+
+% Configure for A4 paper.
+% Margins for ISO 838 (or "888") ring binder, comb binding, or similar.
+\usepackage[a4paper, portrait, inner=3cm, outer=1cm, top=2cm,bottom=2cm]{geometry}
+
+
 
 
 
@@ -49,6 +59,15 @@
 
 \newcommand{\specialcell}[2][c]{%
       \begin{tabular}[#1]{@{}c@{}}#2\end{tabular}}
+
+\newcommand{\customfig}[3]{%
+	\begin{wrapfigure}{r}{0.5\linewidth}
+		\centering
+		\includegraphics[width=20em]{#1}
+		\caption{#2}
+		\label{#3}
+	\end{wrapfigure}%
+}
 
 \begin{document}
 \frontmatter
