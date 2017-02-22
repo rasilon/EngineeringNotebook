@@ -1,0 +1,54 @@
+#!/usr/bin/perl -w
+use strict;
+
+open(my $out,">","chapters/threads-ba.tex") or die("Couldn't open chapters/threads-ba.tex");
+
+print $out <<EOF;
+\\begin{table}[h!]
+    \\footnotesize
+\\begin{longtable}{l|ll|ll|ll}
+    BA
+    &\\multicolumn{2}{c}{Major}
+    &\\multicolumn{2}{c}{Minor}
+    &\\multicolumn{2}{c}{pitch}
+    \\\\
+    % empty
+    &mm
+    &inch
+    &mm
+    &inch
+    &mm
+    &tpi
+    \\\\
+\\hline
+EOF
+
+my $ba = 0;
+
+while($ba < 26){
+    my $pitch = 0.9**$ba;
+    my $diameter = 6.0 * ($pitch ** 1.2);
+    printf($out "%d &%5.3f &%5.4f &%5.3f &%5.4f &%5.3f &%5.1f\\\\\n",
+        $ba,
+        $diameter,
+        $diameter/ 25.4,
+        ($diameter - (1.2 * $pitch)),
+        ($diameter - (1.2 * $pitch))/ 25.4,
+        $pitch,
+        1.0/($pitch /25.4)
+    );
+    $ba++;
+    $diameter = $diameter * 0.9;
+    $pitch = $pitch * 0.9;
+}
+
+print $out <<EOF;
+\\end{longtable}
+\\caption{BA Thread data}
+\\end{table}
+EOF
+
+
+close($out);
+
+# end
