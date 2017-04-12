@@ -2,8 +2,8 @@ TARGET=notebook.pdf
 CHAPTERS=$(wildcard chapters/*.tex)
 
 all: book
-chapters/threads-ba.tex: generate_ba_threads
-	./generate_ba_threads
+chapters/threads-ba.tex: bin/generate_ba_threads
+	./bin/generate_ba_threads
 
 remake:
 	xelatex -halt-on-error notebook.tex
