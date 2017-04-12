@@ -1,7 +1,6 @@
 \documentclass[11pt,twoside,a4paper]{book}
 \usepackage{color}
 \usepackage{fontspec}
-    \setmainfont{Arial}
 \usepackage{xltxtra}
 \usepackage{wasysym}
 \usepackage{gensymb}
@@ -9,6 +8,8 @@
 
 \usepackage{titlesec}
     \newfontfamily\headingfont[]{Michroma}
+\setmainfont{Bitstream Vera Sans}
+\setmonofont{Bitstream Vera Sans Mono}
 
     \titlespacing{\chapter}{0pt}{0pt}{0pt}[0pt]
     \titleformat
@@ -28,7 +29,6 @@
         {} % before code
 
 \titleformat*{\subsection}{\Large\headingfont}
-
 
 \usepackage{wrapfig}
 \usepackage{graphicx}
@@ -81,6 +81,7 @@
 \include{chapters/collets}
 \include{chapters/chucks}
 \include{chapters/hydraulics}
+\include{chapters/cutters}
 
 \end{document}
 
