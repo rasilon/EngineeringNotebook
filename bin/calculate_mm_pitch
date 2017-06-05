@@ -1,0 +1,18 @@
+#!/usr/bin/perl -w
+use strict;
+
+#Quick script to calculate mm pitch from tpi, created for Whitworth threads.
+
+while(my $line = <STDIN>){
+	#print $line;
+	my @cols = split(/&/,$line);
+	my $tpi = $cols[2];
+	if($tpi =~ /^N\/A *$/){
+		print $line;
+		next;
+	}
+	my $mmpitch = sprintf("%.4f",25.4 / $tpi);
+	$cols[3] = sprintf("%-7s",$mmpitch);
+	my $newline = join('&',@cols);
+	print $newline;
+}
