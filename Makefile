@@ -1,5 +1,5 @@
 TARGET=notebook.pdf
-CHAPTERS=$(wildcard chapters/*.tex)
+CHAPTERS=$(wildcard chapters/*.tex chapters/threads/*.tex)
 
 all: book
 chapters/threads-ba.tex: bin/generate_ba_threads

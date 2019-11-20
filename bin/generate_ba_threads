@@ -1,7 +1,7 @@
 #!/usr/bin/perl -w
 use strict;
 
-open(my $out,">","chapters/threads-ba.tex") or die("Couldn't open chapters/threads-ba.tex");
+open(my $out,">","chapters/threads/threads-ba.tex") or die("Couldn't open chapters/threads/threads-ba.tex");
 
 print $out <<EOF;
 \\begin{table}[h!]
