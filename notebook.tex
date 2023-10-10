@@ -22,7 +22,7 @@
 
     \titleformat
         {\section} %command
-        [runin] %shape
+        [block] %shape
         {\LARGE\headingfont} %format
         {\thesection} %lablel
         {1em} %seperator
@@ -46,6 +46,8 @@
 % Margins for ISO 838 (or "888") ring binder, comb binding, or similar.
 \usepackage[a4paper, portrait, inner=3cm, outer=1cm, top=2cm,bottom=2cm]{geometry}
 
+\usepackage{afterpage}
+    \afterpage{\clearpage}
 
 
 
